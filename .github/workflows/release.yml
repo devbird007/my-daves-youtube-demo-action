@@ -23,6 +23,9 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+      - name: Align local branch with the remote
+        run: git pull
+        
       - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This is usually automatically generated with any github actions pipeline execution.
