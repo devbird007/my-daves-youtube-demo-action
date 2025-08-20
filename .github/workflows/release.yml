@@ -17,6 +17,6 @@ jobs:
           node-version: 16
       - run: npm ci
       - run: npm run build
-      - run: npx semantic-release @semantic-release/git @semantic-release/github
+      - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This is usually automatically generated with any github actions pipeline execution.
