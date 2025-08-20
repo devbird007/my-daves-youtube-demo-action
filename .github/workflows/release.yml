@@ -21,8 +21,8 @@ jobs:
       - run: npm run build
 
       - name: Synchronize branch with remote
-        run: git pull
-        
+        run: git fetch --tags --force
+
       - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This is usually automatically generated with any github actions pipeline execution.
